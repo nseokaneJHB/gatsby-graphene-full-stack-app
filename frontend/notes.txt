@@ -1,0 +1,26 @@
+Okay so you used boiler plate gatsby to generate this project and to render the todo tasks.
+
+Which is fine if you are going to make static pages in mass produce that is what gatsby boiler plate from their website is used.
+I am sure you have seen the blog example on their website you will see they a lot of markdown files to achieve multi page generation.
+
+The pages folder you see is just that. everything created in there the gatsby api will create a routing url for you. Thats why I created
+a components folder and made a hello.jsx file to render the actual contents while keeping our index.js clean of not needed dirty code.
+
+now your main issue was that "data" property that you had, it was not coming being pre populate I guess is the explanation, basically
+you created a variable but it had no data... nor was there data being passed to it from no where. So that is why it was undefined.
+
+Your query at the bottom was not correct entirely, I dont know why it was wrapped with django structure but there is probably a reason.
+
+So I installed Apollo client, which is what we use to communicate between our frontend(react) and backend(python django)
+based on the data we can use gatsby to generate pages base on the data if we want... but thats not what we want at the moment just an 
+idea.
+
+After installing apollo in index.js I wrapped the entire app in a apolloProvider basically saying "hey listen everything inside of me
+a.k.a anything you HTML you generate within me the provider you can make use of the useQuerry hook that can call the data and render it"
+
+So thats where the hello.jsx comes in, I call the data with the hook and render the data.
+
+On your backend on the settings.py I had some cors issues which I am not sure why even though I was using port 8001 for my frontend
+so I just removed those basic settings and replaced with something I found on stackoverflow which is just an allow all settings.
+Which is not good for projects.... CORS and trusted sites is needed but I am not 100% sure how to set it up properly for django
+if this was C# I couldve done it. 
