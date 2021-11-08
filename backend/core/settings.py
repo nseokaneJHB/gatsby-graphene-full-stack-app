@@ -46,16 +46,8 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8001",
-    "http://127.0.0.1:8001"
-]
-
-
-CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:8001",
-    "http://127.0.0.1:8001"
-]
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -67,6 +59,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'core.urls'
 
