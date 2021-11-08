@@ -1,0 +1,222 @@
+query GetAllUsers {
+  allUsers {
+    id
+    email
+    username
+  }
+}
+
+query GetAllProfiles {
+  allProfiles {
+    id
+    bio
+    phone
+    user {
+      id
+      email
+      username
+    }
+  }
+}
+
+query GetAllPosts {
+  allPosts {
+    id
+    post
+    author {
+      email
+    }
+    likes {
+      id
+      author {
+        email
+      }
+    }
+  }
+}
+
+query GetAllComments {
+  allComments {
+    id
+    comment
+    post {
+      id
+      post
+      likes {
+        author {
+          email
+        }
+      }
+      author {
+        email
+      }
+    }
+    author {
+      email
+    }
+  }
+}
+
+query GetAllLikes {
+  allLikes {
+    id
+    author {
+      email
+    }
+  }
+}
+
+query GetOneUser($id: String = "1") {
+  oneUser(id: $id) {
+    id
+    email
+    username
+  }
+}
+
+query GetOneProfile($id: String = "1") {
+  oneProfile(id: $id) {
+    id
+    bio
+    phone
+    user {
+      id
+      email
+      username
+    }
+  }
+}
+
+query GetOnePost($id: String = "2") {
+  onePost(id: $id) {
+    id
+    post
+    author {
+      email
+    }
+    likes {
+      id
+      author {
+        email
+      }
+    }
+  }
+  postComments(post: $id) {
+    comment
+  }
+}
+
+query GetOneComment($id: String = "1") {
+  oneComment(id: $id) {
+    id
+    comment
+    post {
+      id
+      post
+      likes {
+        author {
+          email
+        }
+      }
+      author {
+        email
+      }
+    }
+    author {
+      email
+    }
+  }
+}
+
+query GetOneLike($id: String = "1") {
+  oneLike(id: $id) {
+    id
+    author {
+      email
+    }
+  }
+}
+
+query GetUserProfile($user: String = "1") {
+  userProfile(user: $user) {
+    id
+    phone
+    bio
+  }
+}
+
+query GetUserPosts($author: String = "1") {
+  userPosts(author: $author) {
+    id
+    post
+  }
+}
+
+query GetUserComments($author: String = "1") {
+  userComments(author: $author) {
+    id
+    comment
+    post {
+      post
+    }
+  }
+}
+
+query GetLikedComments($author: String = "1") {
+  likedComments(author: $author) {
+    comment
+  }
+}
+
+query GetLikedPosts($author: String = "1") {
+  likedPosts(author: $author) {
+    post
+  }
+}
+
+query GetFullUserActivitiesAtOnces($user: String = "1") {
+  userProfile(user: $user) {
+    user {
+      username
+      email
+    }
+    id
+    bio
+    phone
+  }
+  userPosts(author: $user) {
+    post
+    likes {
+      author {
+        email
+      }
+    }
+  }
+  userComments(author: $user) {
+    comment
+    post {
+      post
+    }
+    likes {
+      author {
+        email
+      }
+    }
+  }
+  likedComments(author: $user) {
+    comment
+  }
+  likedPosts(author: $user) {
+    post
+  }
+}
+
+query GetPostComments($post: String = "2") {
+  postComments(post: $post) {
+    id
+    author {
+      email
+    }
+    comment
+  }
+}

@@ -1,0 +1,68 @@
+query GetAllTasks {
+	tasks {
+		id
+		title
+		complete
+		description
+		dateCreated
+		slug
+	}
+}
+
+query GetOneTask($slug: String = "eat") {
+	task(slug: $slug) {
+		id
+		title
+		complete
+		description
+		dateCreated
+		slug
+	}
+}
+
+mutation CreateTask($title: String = "Do a kick flop"){
+	createTask(title: $title){
+		task{
+			id
+			title
+			complete
+			description
+			dateCreated
+			slug
+		}
+	}
+}
+
+mutation UpdateTask($slug: String = "do-a-kick-flop", $title: String = "Do a kick flop (Updated)"){
+	updateTask(slug: $slug, title: $title){
+		task{
+			id
+			title
+			complete
+			description
+			dateCreated
+			slug
+		}
+	}
+}
+
+mutation ToggleComplete($slug: String = "do-a-kick-flop", $complete: Boolean = true){
+	updateTask(slug: $slug, complete: $complete){
+		task{
+			id
+			title
+			complete
+			description
+			dateCreated
+			slug
+		}
+	}
+}
+
+mutation DeleteTask($slug: String = "do-a-kick-flop"){
+	deleteTask(slug: $slug){
+		task{
+			id
+		}
+	}
+}
