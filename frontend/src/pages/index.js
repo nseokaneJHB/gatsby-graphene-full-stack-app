@@ -1,34 +1,17 @@
-import * as React from "react"
+import * as React from "react";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
-export default function Home({ data }) {
+import HelloWorld from "../components/hello";
 
-	console.log(data)
+export default function App() {
+  const client = new ApolloClient({
+    uri: "http://127.0.0.1:8000/todo/graphql/",
+    cache: new InMemoryCache(),
+  });
 
-	return (
-		<div className="container">
-			<h1 className="h1 text-center">Todo App</h1>
-
-			<div className="card border-primary">
-				<div className="card-body">
-					<h4 className="card-title">Title</h4>
-					<p className="card-text">Text</p>
-				</div>
-			</div>
-		</div>
-	)
+  return (
+    <ApolloProvider client={client}>
+      <HelloWorld />
+    </ApolloProvider>
+  );
 }
-
-export const query = graphql`
-	query GetAllTasks{
-		DJANGO {
-			tasks {
-				id
-				title
-				complete
-				description
-				dateCreated
-				slug
-			}
-		}
-	}
-`
