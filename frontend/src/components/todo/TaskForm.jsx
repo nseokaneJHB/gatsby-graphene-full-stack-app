@@ -21,7 +21,7 @@ export const TaskForm = () => {
 		<div className={ todo__form }>
 			<form className="row g-2 align-items-center" onSubmit={ (e) => submitNewTask(e) }>
 				<div className="col-9">
-					<input type="text" className="form-control form-control-sm" placeholder="Title" onChange={ (e) => setTask(e.target.value) } />
+					<input type="text" className="form-control form-control-sm" placeholder="Title" value={task} onChange={ (e) => setTask(e.target.value) } />
 				</div>
 				<div className="col-3">
 					<button type="submit" className="btn btn-success btn-sm">Submit</button>
