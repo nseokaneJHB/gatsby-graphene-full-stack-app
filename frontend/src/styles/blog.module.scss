@@ -1,0 +1,12 @@
+.blog__section{
+	flex-direction: column;
+	align-items: center;
+	min-height: 72vh;
+	display: flex;
+	gap: 1em;
+
+	h1{
+		font-family: 'Permanent Marker', cursive !important;
+		font-size: max(4vw, 3em, 2rem);
+	}
+}
