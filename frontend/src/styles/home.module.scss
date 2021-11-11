@@ -1,0 +1,24 @@
+.home__section{
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	min-height: 72vh;
+	display: grid;
+	gap: 2em;
+
+	.customer__card__body{
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+		cursor: pointer;
+		display: flex;
+
+		h1{
+			font-family: 'Permanent Marker', cursive !important;
+			font-size: max(4vw, 2em, 2rem);
+		}
+
+		p{
+			font-family: 'Irish Grover', cursive !important;
+			font-size: max(1vw, 1.2em, 1rem);
+		}
+	}
+}
