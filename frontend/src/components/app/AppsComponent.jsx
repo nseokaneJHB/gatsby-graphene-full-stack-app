@@ -11,7 +11,7 @@ import { home__section } from '../../styles/home.module.scss';
 import { useQuery } from "@apollo/client";
 
 // Queries
-import { GetAllApps_MUTATION } from '../../../../frontend1/src/queries/apps/app_queries';
+import { GetAllApps_MUTATION } from '../../queries/app_queries';
 
 export const AppsComponent = () => {
 	const { loading, data } = useQuery(GetAllApps_MUTATION);

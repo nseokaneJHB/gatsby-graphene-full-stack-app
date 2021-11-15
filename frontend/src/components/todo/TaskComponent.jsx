@@ -10,7 +10,7 @@ import { task__wrapper, task__title__date, task__title, task__date, task__action
 import { useMutation } from '@apollo/client';
 
 // Queries
-import { GetAllTasks_MUTATION, DeleteTask_MUTATION, ToggleComplete_MUTATION } from '../../../../frontend1/src/queries/todo/todo_queries';
+import { GetAllTasks_MUTATION, DeleteTask_MUTATION, ToggleComplete_MUTATION } from '../../queries/todo_queries';
 
 // Extra Functionality
 import { FormatDate } from '../../utils/format';

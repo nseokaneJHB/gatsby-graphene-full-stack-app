@@ -10,7 +10,7 @@ import { todo__form } from '../../styles/todo.module.scss';
 import { useMutation } from '@apollo/client';
 
 // Queries
-import { AddNewTask_MUTATION, GetAllTasks_MUTATION } from '../../../../frontend1/src/queries/todo/todo_queries';
+import { AddNewTask_MUTATION, GetAllTasks_MUTATION } from '../../queries/todo_queries';
 
 export const TaskFormComponent = () => {
 

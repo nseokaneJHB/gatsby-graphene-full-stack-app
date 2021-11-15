@@ -12,7 +12,7 @@ import { tasks__section, tasks__wrapper } from '../../styles/todo.module.scss';
 import { useQuery } from '@apollo/client';
 
 // Queries
-import { GetAllTasks_MUTATION } from '../../../../frontend1/src/queries/todo/todo_queries';
+import { GetAllTasks_MUTATION } from '../../queries/todo_queries';
 
 
 export const TodoWrapper = () => {
