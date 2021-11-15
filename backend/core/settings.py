@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +39,7 @@ INSTALLED_APPS = [
 
     'graphene_django',
 
+    'app.apps.AppConfig',
     'todo.apps.TodoConfig',
     'blog.apps.BlogConfig',
 

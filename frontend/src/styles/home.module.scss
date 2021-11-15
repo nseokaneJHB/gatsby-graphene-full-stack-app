@@ -1,8 +1,9 @@
 .home__section{
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(49%, 1fr));
 	min-height: 72vh;
+	width: 100%;
 	display: grid;
-	gap: 2em;
+	gap: 1em;
 
 	.customer__card__body{
 		justify-content: center;
@@ -21,4 +22,4 @@
 			font-size: max(1vw, 1.2em, 1rem);
 		}
 	}
-}
+} 
