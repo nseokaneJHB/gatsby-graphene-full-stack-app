@@ -6,4 +6,5 @@ urlpatterns = [
     path('apps/', include('app.urls')),
     path('todo/', include('todo.urls')),
     path('blog/', include('blog.urls')),
+    path('phonebook/', include('phonebook.urls')),
 ]

@@ -1,0 +1,121 @@
+.phonebook__section{
+	flex-direction: column;
+	align-items: center;
+	min-height: 72vh;
+	display: flex;
+	gap: 1em;
+
+	h1{
+		font-family: 'Permanent Marker', cursive !important;
+		font-size: max(4vw, 3em, 2rem);
+	}
+}
+
+.phonebook__form{
+	max-width: 700px;
+	min-height: 50px;
+	width: 100%;
+}
+
+.phonebook__form__content{
+	place-items: center;
+	display: grid;
+	padding: 1em;
+	height: 100%;
+	gap: 1em;
+}
+
+.contacts__section{
+	width: 100%;
+}
+
+.contacts__wrapper{
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	flex-direction: column;
+	max-width: 1000px;
+	overflow: scroll;
+	min-height: 53vh;
+	max-height: 58vh;
+	margin: 0 auto;
+	display: flex;
+	padding: 1em;
+	gap: 1em;
+}
+
+.contact__wrapper{
+	align-items: center;
+	display: flex;
+
+	.contact__name__phone, .contact__actions{
+		padding: .5em 1em;
+		width: 100%;
+	}
+
+	.contact__name__phone{
+		flex-direction: column;
+		text-decoration: none;
+		display: flex;
+		flex: 10;
+
+		.contact__name{
+			font-family: 'Irish Grover', cursive !important;
+			font-size: 26px;	
+		}
+
+		.contact__phone{
+			font-family: 'Irish Grover', cursive !important;
+			color: rgba(255,255,255,.5);
+			font-size: 16px;
+
+			strong{
+				color: rgba(255,255,255,.7);
+			}
+		}
+	}
+
+	.contact__actions{
+		border-left: 1px solid rgba(255, 255, 255, 0.125);
+		display: flex;
+		gap: 1em;
+		flex: 2;
+	}
+}
+
+.phonebook__contact__form__wrapper{
+	align-items: center;
+	min-height: 60vh;
+	display: flex;
+	padding: 1em;
+	width: 100%;
+
+	input, input:focus{
+		background: linear-gradient(to right, rgba(146, 43, 225, .2) 0%, rgba(43, 9, 107, 0.2) 100%);
+		box-shadow: 0 0 5px rgba(255, 255, 255, 0);
+		transition: border 1s ease-in;
+		color: #fff;
+		border: none;
+		border-bottom: .5px solid rgba(255,255,255,.55);
+	}
+	
+	input:focus, button:focus{
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+		transition: box-shadow .5s ease-in;
+		border: none;
+	}
+}
+
+.phonebook__contact__form{
+	flex-direction: column;
+	max-width: 600px;
+	display: flex;
+	margin: auto;
+	padding: 1em;
+	width: 100%;
+	gap: 2em;
+}
+
+.phonebook__contact__form__fields{
+	flex-direction: column;
+	display: flex;
+	gap: 2em;
+}

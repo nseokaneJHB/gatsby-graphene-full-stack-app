@@ -39,11 +39,12 @@ INSTALLED_APPS = [
 
     'graphene_django',
 
+    'corsheaders',
+
     'app.apps.AppConfig',
     'todo.apps.TodoConfig',
     'blog.apps.BlogConfig',
-
-    'corsheaders',
+    'phonebook.apps.PhonebookConfig',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

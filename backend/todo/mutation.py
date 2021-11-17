@@ -27,7 +27,6 @@ class TaskMutation(graphene.Mutation):
 					except Task.DoesNotExist:
 						return None
 
-
 				# Update Task
 				if kwargs.get('title') is not None:
 					task.title = kwargs.get('title').title()
@@ -40,18 +39,14 @@ class TaskMutation(graphene.Mutation):
 
 				task.save()
 				return TaskMutation(task=task)
+				
 			except Task.DoesNotExist:
 				return None
 
 
 		# Create New Task
-		description = ""
-
-		if kwargs.get('description') is not None:
-			description = kwargs.get('description')		
-
 		if kwargs.get('title') is not None:
-			task = Task(title=kwargs.get('title').title(), description=description)
+			task = Task(title=kwargs.get('title').title(), description=kwargs.get('description') if kwargs.get('description') is not None else "")
 			task.save()
 			return TaskMutation(task=task)
 
